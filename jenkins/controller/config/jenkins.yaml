@@ -89,7 +89,7 @@ jobs:
             scm {
               git {
                 remote {
-                  url('https://github.com/aws-samples/aws-jenkins-ecs-cdk.git')
+                  url('https://github.com/AnikaSystems/aws-jenkins-ecs-cdk.git')
                 }
                 branch('*/main')
               }
@@ -106,7 +106,7 @@ jobs:
             scm {
               git {
                 remote {
-                  url('https://github.com/aws-samples/aws-jenkins-ecs-cdk.git')
+                  url('https://github.com/AnikaSystems/aws-jenkins-ecs-cdk.git')
                 }
                 branch('*/main')
               }

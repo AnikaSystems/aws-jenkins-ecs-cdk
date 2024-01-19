@@ -77,12 +77,12 @@ Ensure you have access completed the Cloud9 setup prior to working through the b
     openssl x509 -noout -text -in jenkins-dev.private.crt
     ```
 
-6. Import the certifcate into AWS Certificate Manager so that it could be used by the ALB.
+7. Import the certifcate into AWS Certificate Manager so that it could be used by the ALB.
     ```bash
-    aws acm import-certificate --certificate file://jenkins-dev.private.crt --private-key file://jenkins-dev.private.key --region $CDK_DEFAULT_REGION
+    aws acm import-certificate --certificate fileb://jenkins-dev.private.crt --private-key fileb://jenkins-dev.private.key --region $CDK_DEFAULT_REGION
     ```
 
-7. Store the root CA certificate in secrets manager that can be used by CDK pipeline when building container image.
+8. Store the root CA certificate in secrets manager that can be used by CDK pipeline when building container image.
     - Let us encode the pem with base64 to preserve the format of the pem file.
         ```bash
         cd ~/environment/openssl-setup
@@ -101,7 +101,7 @@ Ensure you have access completed the Cloud9 setup prior to working through the b
         aws secretsmanager get-secret-value --secret-id /dev/jenkins/rootCA --region $CDK_DEFAULT_REGION --query 'SecretString' --output text | base64 -d
         ```
 
-8. Store the ACM Certificate ARN in parameter store that will be used for the Jenkins ALB. 
+9. Store the ACM Certificate ARN in parameter store that will be used for the Jenkins ALB. 
     ```bash
     aws ssm put-parameter \
     --name "/dev/jenkins/acm/selfSignedCertificateArn" \
@@ -110,7 +110,7 @@ Ensure you have access completed the Cloud9 setup prior to working through the b
     --region=$CDK_DEFAULT_REGION
     ```
 
-9. cdk.json default value for **ctxACMCertMode** is **self-signed**.
+10. cdk.json default value for **ctxACMCertMode** is **self-signed**.
 
 ### AWS Certificate Manager
 - [Importing certificates into AWS Certificate Manager](https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html)

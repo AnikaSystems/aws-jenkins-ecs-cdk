@@ -10,3 +10,4 @@ cdk.context.json
 
 # System files
 **/.DS_Store
+/.vs

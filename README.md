@@ -32,7 +32,7 @@ Leverage AWS services Amazon Elastic Container Service (ECS), Amazon Elastic Con
 3. Clone the source code repository from aws-samples:
     ```bash
     cd ~/environment
-    git clone https://github.com/aws-samples/aws-jenkins-ecs-cdk.git                    
+    git clone https://github.com/AnikaSystems/aws-jenkins-ecs-cdk.git                    
     ```
 
 4. Setup Git User:
@@ -87,7 +87,7 @@ Leverage AWS services Amazon Elastic Container Service (ECS), Amazon Elastic Con
     --region=$CDK_DEFAULT_REGION
     ```
 
-6. Run the CloudFormation template available [here](assets/images/images/cf-jenkins-deployment-role.yaml) in the workload account and provide the **DevOps AWSAccountId**. Please review/update the Jenkins deployment role based on your requirements to limit the role to specific permissions needed for Jenkins Agent.
+6. Run the CloudFormation template available [here](assets/templates/cfn-jenkins-deployment-role.yaml) in the workload account and provide the **DevOps AWSAccountId**. Please review/update the Jenkins deployment role based on your requirements to limit the role to specific permissions needed for Jenkins Agent.
 
     ![Jenkins Deploy Role](assets/images/10-jenkins-deploy-role.png)
 
