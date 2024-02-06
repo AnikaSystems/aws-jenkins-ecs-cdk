@@ -1,0 +1,23 @@
+pipeline {
+  agent {
+    label 'fargate'
+  }
+
+    stages {
+        stage('Init') {
+            steps {
+                sh 'terraform init'
+            }
+        }
+        stage('Plan') {
+            steps {
+                sh 'terraform plan -out=tfplan'
+            }
+        }
+        stage('Apply') {
+            steps {
+                sh 'terraform apply "tfplan"'
+            }
+        }
+    }
+}
